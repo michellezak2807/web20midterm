@@ -1,0 +1,154 @@
+
+ *{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffda75;
+    height: 140px;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav .logo {
+   min-width: 120px;
+    height: 120px;
+
+    background-color: #fff;
+    border-radius: 50%; 
+    position: relative;
+    overflow: hidden;
+
+    margin-left: 20px;
+
+
+}
+
+.logo img {
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%, -57%);
+        width: 110px;
+
+}
+
+.links {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+}
+
+.links li {
+    align-items: center;
+    list-style: none;
+    float: right;
+
+    display: flex;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 60px
+}
+
+.links li:not(:first-child) {
+    border-left: 1.5px solid #bb5515;
+} 
+
+
+
+.links a {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+    padding: 10px 12px;
+    text-decoration: none;
+    color: #bb5515;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+
+.links li:last-child {
+    padding-right: 30px;
+}
+
+.links a:hover {
+    opacity: 45%;
+}
+
+
+.hamburger-nav {
+    display: none;
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 900px) {
+    .nav {
+        display: none;
+    }
+
+    #links {
+        display: none;
+    }
+
+    
+    .hamburger-nav {
+        display: block;
+        overflow: hidden;
+        position: relative;
+        background-color: #ffda75;
+        font-size: 30px;
+        /* width: 100%; */
+    }
+
+    .hamburger-nav a {
+        padding: 14px 16px;
+        text-decoration: none;
+        display: block;
+        color: #bb5515
+    
+
+    }
+
+    .hamburger-nav a.icon {
+        background: #ffda75;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .active {
+        background-color: #ffda75;
+        color:#bb5515;
+    }
+
+    #links a:hover{
+        opacity: 45%;
+    }
+
+    #ham-title {
+        border-bottom: 0px solid #bb5515;
+    }
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    .hamburger-nav {
+        font-size: 20px;
+    }
+}
