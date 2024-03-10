@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hive Haven</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="navstyle.css" />
+
+</head>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #ffda75;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #bb5515;
+    margin: 0;
+    font-size: 36px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #bb5515;
+    font-size: 18px;
+}
+
+section#content {
+    padding: 20px;
+}
+
+section#content h1 {
+    color: #bb5515;
+    font-size: 28px;
+    text-align: center;
+}
+
+section#content h2 {
+    color: #000;
+    font-size: 16px;
+    text-align: center;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+section#content h3 {
+    color: #000;
+    font-size: 18px;
+    margin: 0;
+}
+
+section#content p {
+    color: #000;
+    font-size: 16px;
+}
+
+section#content ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 30px;
+}
+
+section#content ol li {
+    width: calc(50% - 10px);
+    height: 160px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #ffda75;
+    border-radius: 10px;
+    padding: 15px;
+    float: left;
+    box-sizing: border-box;
+}
+
+section#content ol li:nth-child(2n) {
+    margin-right: 0;
+}
+
+section#content h3 {
+    color: #333;
+}
+
+p.donate {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+p.donate a {
+    color: #bb5515;
+    text-decoration: underline;
+}
+
+
+</style>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <img src="logo.png" alt="Hive Haven" width="150">
+        </div>
+        <ul class="links">
+            <li><a href=#>Home</a></li>
+            <li><a href=#>What We Do</a></li>
+            <li><a href=#>Adopt A Hive</a></li>
+            <li><a href=#>Honey Shop</a></li>
+            <li><a href=#>How to Support</a></li>
+            <li><a href=#>Meet the Team</a></li>
+            <li><a href=#>Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div class="hamburger-nav">
+        <a href="#" id="ham-title"> Hive Haven</a>
+        <div id="links">
+            <a href=#>Home</a>
+            <a href=#>What We Do</a>
+            <a href=#>Adopt A Hive</a>
+            <a href=#>Honey Shop</a>
+            <a href=#>How to Support</a>
+            <a href=#>Meet the Team</a>
+            <a href=#>Contact Us</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="hamburger()"> 
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <script src="hamburger.js"> </script>
+
+    <section id="content">
+        <h1>Bee-lieve in Bee Populations: Your Buzz-tastic Guide</h1>
+        <h2>Bees are the superheroes of the garden, ensuring the growth of fruits, veggies, and flowers. Dive into the hive and discover some bee-utiful ways to support our buzzing buddies:</h2>
+        
+        <ol>
+            <li>
+                <h3>Bloom Your Garden with Bee-Friendly Blooms!</h3>
+                <p>Create a buzzing paradise by planting a variety of native flowers that bloom year-round. Bees love a buffet, so include wildflowers, herbs, and flowering trees to entice different bee species.</p>
+            </li>
+            <li>
+                <h3>Buzz Off, Pesticides!</h3>
+                <p>Say no to pesticides! These chemicals can be a real buzzkill for bees. Instead, opt for natural pest control methods and bee-safe products. Keep it eco-friendly and watch your garden thrive.</p>
+            </li>
+            <li>
+                <h3>Bee Condos: Providing Premium Bee Real Estate</h3>
+                <p>Give our winged wonders a place to call home sweet home. Install bee hotels or nesting boxes and leave patches of bare soil for ground-nesting species. Let's build a bee-utiful neighborhood!</p>
+            </li>
+            <li>
+                <h3>Support Local Beekeepers: Bee-lieve in Bees and Community!</h3>
+                <p>Join the buzz and support local beekeepers! Grab some honey and bee products from those who practice sustainable beekeeping. It's a win-win: help bees thrive and support your local economy.</p>
+            </li>
+        </ol>
+        
+        <p class="donate">Ready to Bee-come a Bee-saver? <a href="adopt.html">Adopt a Hive</a> and be the hero our buzzing buddies need!</p>
+        
+    </section>
+</body>
+
+
+</html>
