@@ -12,23 +12,27 @@
 
     <style>
         .slideshow {
-            max-width: 100%;
+            max-width: 50%;
             align-content: center;
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-right: 20px;
         }
 
         .slideshow img {
             width: 800px;
             max-width: 80%;
             height: auto;
+            border-radius: 10px;
+            border: 10px solid #ffda75;
+            box-shadow: 0 0 0 2px black; 
         }
 
         .seperator {
-            display: table;
-            width: 100%;
-            table-layout: fixed;    /* For cells of equal size */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .seperator div {
             display: table-cell;
@@ -39,11 +43,119 @@
             background-color: #f8b173;
         }
 
-        label {
+        form * {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             color: #662b11;
         }
+
+        .formHolder {
+            max-width: 50%;
+            margin-left: 100px;
+        }
+
+        h1 {
+            color: #662b11;
+            text-align: center;
+            padding-top: 20px;
+            /* padding: 10px; */
+            font-size: 100px;
+        }
+
+        h2 {
+            color: #bb5515;
+            text-align: center;
+            font-size: 40px;
+            font-weight: 100;
+        }
+
+        .info {
+            margin: 40px auto; 
+            padding: 20px;
+            background-color: #ffda75; 
+            border-radius: 10px;
+            border: 2px solid #000000; 
+            margin-left: 10px;
+            margin-right: 10px;
+            color: #662b11;
+        }
+
+        h3 {
+            color: #662b11;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
     </style>
+
+    
+    <style>
+        .container {
+        max-width: 500px;
+        margin: 40px auto; 
+        padding: 40px;
+        background-color: #ffda75; 
+        border-radius: 10px;
+        border: 2px solid #000000; 
+        }
+
+        .form-group {
+        margin-bottom: 20px;
+        }
+
+        .form-group label {
+        display: block;
+        text-align: left;
+        font-weight: bold;
+        margin-bottom: 10px; 
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-top: 5px;
+        }
+
+        .form-group input[type="text"]::placeholder,
+        .form-group input[type="email"]::placeholder,
+        .form-group textarea::placeholder {
+        color: #888888;
+        }
+
+        .form-group textarea {
+        resize: none;
+        height: 150px;
+        }
+
+        .radioText {
+            display: inline-block;
+        }
+
+        .radioText label,
+        .radioText p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .btn {
+            background-color: #be4e1f;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: #be4e1f;
+        }
+
+        </style>
 
     <style>
 
@@ -200,31 +312,32 @@
 
 
 <body>
+    <!-- The following is the nav bar and code for hamburger nav -->
     <div class="nav">
         <div class="logo">
             <img src="logo.png" alt="Hive Haven" width="150">
         </div>
         <ul class="links">
-            <li><a href=#>Home</a></li>
-            <li><a href=#>What We Do</a></li>
-            <li><a href=#>Adopt A Hive</a></li>
-            <li><a href=#>Honey Shop</a></li>
-            <li><a href=#>How to Support</a></li>
-            <li><a href=#>Meet the Team</a></li>
-            <li><a href=#>Contact Us</a></li>
+            <li><a href=index.html>Home</a></li>
+            <li><a href=whatwedo.html>What We Do</a></li>
+            <li><a href=adoptAHive.html>Adopt A Hive</a></li>
+            <li><a href=honeyshop.html>Honey Shop</a></li>
+            <li><a href=support.html>How to Support</a></li>
+            <li><a href=aboutUs.html>Meet the Team</a></li>
+            <li><a href=contact.html>Contact Us</a></li>
         </ul>
     </div>
 
     <div class="hamburger-nav">
         <a href="#" id="ham-title"> Hive Haven</a>
         <div id="links">
-            <a href=#>Home</a>
-            <a href=#>What We Do</a>
-            <a href=#>Adopt A Hive</a>
-            <a href=#>Honey Shop</a>
-            <a href=#>How to Support</a>
-            <a href=#>Meet the Team</a>
-            <a href=#>Contact Us</a>
+            <a href=index.html>Home</a>
+            <a href=whatwedo.html>What We Do</a>
+            <a href=adoptAHive.html>Adopt A Hive</a>
+            <a href=honeyshop.html>Honey Shop</a>
+            <a href=support.html>How to Support</a>
+            <a href=aboutUs.html>Meet the Team</a>
+            <a href=contact.html>Contact Us</a>
         </div>
         <a href="javascript:void(0);" class="icon" onclick="hamburger()"> 
             <i class="fa fa-bars"></i>
@@ -233,8 +346,11 @@
 
     <script src="hamburger.js"> </script>
 
+    <h1>Adopt a Hive!</h1>
+
 
     <div class="seperator">
+
         <div class="slideshow">
             <br>
             <img src="beesSlide1.jpg" />
@@ -244,28 +360,64 @@
             <img src="hiveSlide6.jpg" />
             <img src="pollenSlide4.jpg" />
         </div>
-        <div>
+
+        <div class="formHolder">
             <br>
+            <div class="container">
             <form id="adoptionForm" method='get' action='index.html'>
-                <label>Name:</label>
+                <div class="form-group">
+                    <label>Name:</label>
                     <input type='text' placeholder='Barry B. Benson' name='name'/>
+                </div>
+
                 <br />
+
+                <div class="form-group">
                     <label>Email:</label>
                     <input type='email' placeholder='hive@beemail.com' name='email'/>
+                </div>
+                
                 <br/>
-                    <p>Please select your donar level:</p>
+
+                <div class="radioText">
+                    <p>Please select your donor level:</p>
                     <input type="radio" id="bee" name="donorLevel" value="BEE">
-                    <label for="bee">Adopt a Bee</label><br>
+                    <label for="bee">Adopt a Bee</label>
 
                     <input type="radio" id="hive" name="donorLevel" value="HIVE">
-                    <label for="hive">Adopt a Hive</label><br>
+                    <label for="hive">Adopt a Hive</label>
 
                     <input type="radio" id="colony" name="donorLevel" value="COLONY">
                     <label for="colony">Adopt a Colony</label>
+                </div>
+
                 <br />
-                <input type='submit' value='Finalize Adoption!' onclick='DonorPage(event)'/>
+                <input type='submit' value='Finalize Adoption!' class='btn' onclick='DonorPage(event)'/>
                     
             </form> 
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="seperator">
+        <div>
+            <h2>Adopt a Bee!</h2>
+            <h3>$5.00</h3>
+            <p class="info">Adopting a bee, is the perfect place to start a donation. It plays a crucial role in supporting our bee conservation efforts. Bees are vital pollinators responsible for the reproduction of many plant species, including those that produce fruits, vegetables, and nuts. By adopting a bee, individuals contribute to the preservation of bee populations, and will recieve a link to follow their bee as they buzz along pollinating.</p>
+        </div>
+
+        <div>
+            <h2>Adopt a Hive!</h2>
+            <h3>$20.00</h3>
+            <p class="info">Adopting a hive represents a significant step forward in supporting our bee conservation initiatives. By embracing a hive, donors play a crucial role in maintaining the health and well-being of these honey makers. In return for their support, donors receive updates and insights into the bustling life of their adopted hive, witnessing firsthand the remarkable efforts these bees undertake in pollinating our ecosystems.</p>
+        </div>
+
+        <div>
+            <h2>Adopt a Colony!</h2>
+            <h3>$50.00</h3>
+            <p class="info">For those seeking to make a substantial impact on bee conservation, adopting a colony offers a powerful opportunity. Colonies consist of thousands of individual bees working together in complex societies. By adopting a colony, donors provide vital funding for large-scale conservation projects aimed at protecting entire bee populations. Donors also gain access to updates about the colony, and broader conservation efforts they're contributing to.</p>
         </div>
     </div>
 
@@ -288,7 +440,7 @@
                 showSlide(currentIndex);
             }
 
-            setInterval(nextSlide, 2000); // Change slide every 2 seconds
+            setInterval(nextSlide, 4000);
         });
 
         const donorLevs = ["BEE", "HIVE", "COLONY"];
