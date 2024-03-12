@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="navstyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -167,32 +168,72 @@
 
 </style>
 
+<style>
+    .btn {
+        background-color: #be4e1f;
+        color: #ffffff;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    .btn:hover {
+        background-color: #be4e1f;
+    }
+
+    h1 {
+        color: #662b11;
+        text-align: center;
+        padding-top: 20px;
+        /* padding: 10px; */
+        font-size: 100px;
+    }
+
+    h2 {
+        color: #bb5515;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 100;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
 <body>
+    <!-- The following is the nav bar and code for hamburger nav -->
     <div class="nav">
         <div class="logo">
-            <img src="logo.png" alt="Hive Haven" width="150">
+            <a href="index.html">
+                <img src="logo.png" alt="Hive Haven" width="150">
+            </a> 
         </div>
         <ul class="links">
-            <li><a href=#>Home</a></li>
-            <li><a href=#>What We Do</a></li>
-            <li><a href=#>Adopt A Hive</a></li>
-            <li><a href=#>Honey Shop</a></li>
-            <li><a href=#>How to Support</a></li>
-            <li><a href=#>Meet the Team</a></li>
-            <li><a href=#>Contact Us</a></li>
+            <li><a href=index.html>Home</a></li>
+            <li><a href=whatwedo.html>What We Do</a></li>
+            <li><a href=adoptAHive.html>Adopt A Hive</a></li>
+            <li><a href=honeyshop.html>Honey Shop</a></li>
+            <li><a href=support.html>How to Support</a></li>
+            <li><a href=aboutUs.html>Meet the Team</a></li>
+            <li><a href=contact.html>Contact Us</a></li>
         </ul>
     </div>
 
     <div class="hamburger-nav">
         <a href="#" id="ham-title"> Hive Haven</a>
         <div id="links">
-            <a href=#>Home</a>
-            <a href=#>What We Do</a>
-            <a href=#>Adopt A Hive</a>
-            <a href=#>Honey Shop</a>
-            <a href=#>How to Support</a>
-            <a href=#>Meet the Team</a>
-            <a href=#>Contact Us</a>
+            <a href=index.html>Home</a>
+            <a href=whatwedo.html>What We Do</a>
+            <a href=adoptAHive.html>Adopt A Hive</a>
+            <a href=honeyshop.html>Honey Shop</a>
+            <a href=support.html>How to Support</a>
+            <a href=aboutUs.html>Meet the Team</a>
+            <a href=contact.html>Contact Us</a>
         </div>
         <a href="javascript:void(0);" class="icon" onclick="hamburger()"> 
             <i class="fa fa-bars"></i>
@@ -201,7 +242,35 @@
 
     <script src="hamburger.js"> </script>
 
-    <p>Bee Donor</p>
+    <h1>Thank you for your donation!</h1>
+
+    <h2>You will now recieve emails about your bee!</h2>
+    <br>
+    <div class="container">
+        <form action="index.html">
+            <input type='submit' value='Return Home' class='btn'/>
+        </form>
+    </div>
+    
+    <script src="confetti.js"></script>
+    <script>
+        const start = () => {
+            setTimeout(function() {
+                confetti.start()
+            }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+        };
+
+        //  for stopping the confetti 
+
+        const stop = () => {
+            setTimeout(function() {
+                confetti.stop()
+            }, 3000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+        };
+        // after this here we are calling both the function so it works
+        start();
+        stop();
+    </script>
 </body>
 
 

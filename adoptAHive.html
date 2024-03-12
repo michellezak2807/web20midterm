@@ -306,7 +306,41 @@
         }
     }
 
-</style>
+    </style>
+
+    <script>
+        function validateForm() 
+        {
+            const donorLevs = ["BEE", "HIVE", "COLONY"];
+            const donorCost = [5.00, 20.00, 50.00];
+            const donorLinks = ["beeDonor.html", "hiveDonor.html", "colonyDonor.html"];
+
+            let form = document.getElementById("adoptionForm");
+
+            let name = document.forms["adoptionForm"]["name"].value;
+            let email = document.forms["adoptionForm"]["email"].value;
+            let level = $('input[name="donorLevel"]:checked').val();
+            let index = donorLevs.indexOf(level);
+
+            if (name == "") {
+                alert("Please enter your name");
+                return false;
+            }
+
+            if (email == "") {
+                alert("Please enter your email");
+                return false;
+            }
+
+            if (index == -1) {
+                alert("Please select your donation level");
+                return false;
+            }
+
+            form.action = donorLinks[index];
+            form.submit();
+        }
+    </script>
 </head>
 
 
@@ -366,7 +400,7 @@
         <div class="formHolder">
             <br>
             <div class="container">
-            <form id="adoptionForm" method='get' action='index.html'>
+            <form id="adoptionForm" method='get' action='index.html' onsubmit="return validateForm()">
                 <div class="form-group">
                     <label>Name:</label>
                     <input type='text' placeholder='Barry B. Benson' name='name'/>
@@ -394,7 +428,7 @@
                 </div>
 
                 <br />
-                <input type='submit' value='Finalize Adoption!' class='btn' onclick='DonorPage(event)'/>
+                <input type='submit' value='Finalize Adoption!' class='btn'/>
                     
             </form> 
             </div>
@@ -427,13 +461,15 @@
     <script>
         $(document).ready(function () 
         {
-            var $slides = $('.slideshow').find('img');
-            var slideCount = $slides.length;
+            var slides = $('.slideshow').find('img');
+            var slideCount = slides.length;
             var currentIndex = 0;
-
+            
+            slides.slice(1).hide();
+            
             function showSlide(index) 
             {
-                $slides.hide().eq(index).show();
+                slides.hide().eq(index).show();
             }
 
             function nextSlide() 
@@ -444,21 +480,6 @@
 
             setInterval(nextSlide, 4000);
         });
-
-        const donorLevs = ["BEE", "HIVE", "COLONY"];
-        const donorCost = [5.00, 20.00, 50.00];
-        const donorLinks = ["beeDonor.html", "hiveDonor.html", "colonyDonor.html"];
-
-
-        function DonorPage(event) 
-        {
-            let form = document.getElementById("adoptionForm");
-            let level = $('input[name="donorLevel"]:checked').val();
-            let index = donorLevs.indexOf(level);
-
-            form.action = donorLinks[index];
-            form.submit();
-        }
     </script>
 </body>
 
