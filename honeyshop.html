@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Untitled Document</title>
-	<link rel="stylesheet" href="navstyle.css" />
 	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="navstyle.css" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 	<style>
 		.below-nav {
 			margin: 40px !important;
@@ -23,10 +25,11 @@
 		
 		.cards-div {
 			display: inline-block;
-			width: 70%;
+/*			width: 70%;*/
+			width: 100%;
 /*			align-content: center;*/
 			margin: 0 auto;
-				text-align: center;
+			text-align: center;
 			
 		}
 		
@@ -58,6 +61,7 @@
 			margin: 0 auto; 
         	display: block;
 			width: 150px;
+			scale: 1;
 		}
 		
 		.card .cart-button:hover {
@@ -65,8 +69,11 @@
 		}
 		
 		.cart-div {
-			width: 25%;
-			height: 400px;
+/*			width: 25%;*/
+			display: none !important;
+/*			height: 400px;*/
+			min-height: 200px;
+/*			height: 200px;*/
 /*			max-width: 300px;*/
 			background-color: #FFF;
 			align-content: center;
@@ -76,13 +83,174 @@
 			margin-top: 20px;
 		}
 		
-		.cart-div h2 {
+		#cart-heading {
+			background-color: #994114;
+		}
+		
+		#cart-menu #cart-title {
+			display: inline-block;
 			text-align: center;
 			padding: 10px;
-			background-color: #994114;
 			color: #FFFFFF;
+			width: 86%;
+		}
+		
+		#cart-text {
+			margin-left: 40px;
+			font-size: 20px;
+			font-weight: bold;
+			letter-spacing: 1.5px;
+		}
+		
+		#x {
+			display: inline-block;
+			color: #FFF;
+			text-align: center;
+			font-size: 20px;
+		}
+		
+		#x:hover {
+			opacity: 50%;
+			user-select: none;
+		}
+		
+		
+		#cart-menu {
+			margin-top: 40px;
+			z-index: 30;
+/*			height: 70%;*/
+			min-height: 200px;
+   			box-sizing: border-box;
+			width: 400px;
+/*			border: 1px solid black;*/
+			box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+			display: none;
+			position: absolute;
+			right: -400px;
+			background-color: #FFFFFF;
+		}
+		
+		@media only screen and (max-width: 760px) {
+			#cart-menu {
+				right: 0px;
+				width: 90%;
+				min-height: 30%;
+				display: none;
+				margin: 20px;
+			}
+			
+			.card {
+				max-width: 280px;
+				margin-left: 0px;
+				margin-right: 0px;
+			}
+		}
+		
+		#cart-button {
+/*			margin-top: 5px;*/
+			z-index: 100;
+		}
+		
+		#cart-button-circle {
+			float: right;
+			float: top;
+			margin-top: -60px;
+			margin-bottom: 40px;
+			border-radius: 50%;
+			background-color: #994114;
+			padding: 13px;
+			z-index: 100;
+		}
+		
+		#cart-button-circle:hover {
+			opacity: 50%;
+		}
+		
+		#message {
+			text-align: center;
+			padding: 20px;
+		}
+		
+		
+		.product-name { 
+			display: inline-block;
+			color: #AC4345;
+			margin: 10px;
+		}
+		
+		.product-name .name {
+			font-size: 20px;
+			color: #AC4345;
+		}
+		
+		.count {
+			opacity: 70%;
+		} 
+		
+		.price {
+			display: inline-block;
+			color: #005681;
+			align-content: center;
+			text-align: right;
+			margin: 10px;
+			float: right;
 		}
 	
+		#checkout {
+			background-color: #994114;
+			margin: 20px;
+			border-radius: 10px;
+			color: #FFF;
+			padding: 8px;
+			margin-top: 8px !important;
+			align-content: center;
+			user-select: none;
+			text-align: center;
+			margin: 0 auto; 
+        	display: block;
+			width: 150px;
+			scale: 1;	
+		}
+		
+		#checkout:hover {
+			opacity: 60%;
+		}
+		
+		h1, h4 {
+			text-align: center;
+/*			position: relative;*/
+			width: 70%;
+			align-content: center;
+			margin: 0 auto;
+		}
+		
+		#checkout-option {
+			display: none;
+		}
+		
+		#empty-cart {
+			text-align: center;
+			padding: 10px;
+			user-select: none;
+			color: #B2762C;
+			scale: 1;
+		}
+		
+		#empty-cart:hover {
+			color:#4865B0;
+		}
+		
+
+		.thankyou-banner {
+			width: 100%;
+			background-color: #1A4990;
+			padding: 0px;
+			color: white;
+			text-align: center;
+			height: 0;
+		}
+
+		
 	</style>
 </head>
 <body>
@@ -120,25 +288,38 @@
 
     <script src="hamburger.js"> </script>
 
+	<div id="cart-menu">
+		<div id="cart-heading">
+			<div id="cart-title"><div id="cart-text">Cart</div></div>
+			<div id="x">X</div>
+		</div>
+		<div id="message">...</div>
+		<div id="cart-products"> </div>
+		<div id="checkout-option">
+			<div class="row"> 
+				<div class="product-name"><div class="name">Total</div></div>
+				<div class="price" id="total-price">$</div>
+			</div>
+		<div id="checkout">Checkout</div>
+		<div id="empty-cart">Empty cart</div>
+		</div>
+	</div>
+	
+	<div class="thankyou-banner">
+			Thank you for supporting Hive Haven! :)
+	</div>
 	
 	<div class="below-nav">
+	
 		
-<!--
-		<div class="card">
-			<img src="cloverhoney3.png" alt="Girl in a jacket" width="100%">
-			<h2>Clover Honey</h2>
-			<h3>1 Pint (1.5 lbs)</h3>
-			<div class="cart-button">
-				Add to Cart
-			</div>
+		<h1>Our Honey Shop</h1>
+		<h4>100% of proceeds goes towards saving the bees</h4>
+		
+		
+		<div id="cart-button-circle">
+			<img id="cart-button" src="shopping-cart.png" alt='Cart' width=30px height=30px>
 		</div>
--->
-<!--
-		<div class="card">
-			<h2>Honey</h2>
-			<h3>1 Pint (1.5 lbs)</h3>
-		</div>
--->
+		
 		<div class="cards-div">
 		<script>
 		
@@ -146,36 +327,162 @@
 			{
 				name: "Clover Honey",
 				image: "cloverhoney3.png",
-				price: 19.99,
+				price: 11.99,
 				description: "1 Pint (1.5 lbs)",
 				count: 0
 			},
 			{
 				name: "Orange Blossom Honey",
-				image: "cloverhoney3.png",
-				price: 29.99,
+				image: "obhoney.png",
+				price: 13.99,
 				description: "1 Pint (1.5 lbs)",
 				count: 0
 			},
 			{
-				name: "Honey",
-				image: "cloverhoney3.png",
-				price: 39.99,
+				name: "Wildflower Honey",
+				image: "wildflowerhoney.png",
+				price: 12.99,
 				description: "1 Pint (1.5 lbs)",
 				count: 0
 			}
 			];
 
-			products.forEach(product => {
+			products.forEach((product,index) => {
 				document.write("<div class='card'>")
 				document.write("<img src=" + product.image + " alt='Product Image' width=100%>")
 				document.write("<h2>" + product.name + "</h2>")
 				document.write("<h3>" + product.description + "</h3>")
 				document.write("<h3>" + "$" + product.price + "</h3>")
-				document.write("<div class='cart-button'>Add to Cart</div>")
+				document.write("<div class='cart-button' id='" + index + "'" + ">Add to Cart</div>")
 				document.write("</div>")
 			});
+			
+			products.forEach((product,index) => {
+				let buttonId = "#" + index
+				var button = $(buttonId)
+				
+				button.click(function() {
+					product.count += 1
+					updateMenu()
+					button.animate({ scale: '0.92' }, 100)
+              			  .animate({ scale: '1' }, 100);
+				});
+			});
+			
+			
+			$("#cart-button-circle").click(function() {
+				updateMenu()
+				var menu = $("#cart-menu");
+				console.log(window.orientation)
+				if (!isMobileDevice()) {
+					if ($(menu).is(":visible")) {
+						$(menu).animate({right: '-400px'}, 500, function() {
+							$(menu).hide();
+						});
+					} else {
+						$(menu).css("right", '-400px')
+						$(menu).css("opacity", 1);
+						$(menu).show().animate({right: 0}, 500);
+					}
+				} else {
+					$(menu).show()
+					$(menu).css("opacity", 0);
+					$(menu).css("right", '0')
+					$(menu).animate({opacity: '1'}, 200, function() {
+					});
+				}
+				
+				$("#cart-button-circle").animate({ scale: '0.92' }, 100)
+              			  .animate({ scale: '1' }, 100);
+			});
+			
+			$("#checkout").click(function() {
+				products.forEach((product,index) => {
+					product.count = 0
+				});
+				
+				updateMenu()
+				
+				$(".thankyou-banner").animate({ height: '20px', padding: '10px' }, 500)
+			});
 		
+			
+			function isMobileDevice() {
+				return window
+					.matchMedia("only screen and (max-width: 760px)").matches;
+			}
+			
+			$("#x").click(function() {
+				var menu = $("#cart-menu");
+				if (!isMobileDevice()) {
+					$(menu).animate({right: '-400px'}, 500, function() {
+						$(menu).hide();
+					});
+				} else {
+					$(menu).css("right", '0');
+					$(menu).css("opacity", 1);
+					$(menu).animate({opacity: '0'}, 200, function() {
+					});
+					$(menu).hide()
+				}
+			});
+			
+			function updateMenu() {
+				var totalCount = 0
+				products.forEach((product,index) => {
+					totalCount += product.count
+				});
+				console.log(totalCount)
+				$("#cart-products").html("")
+				
+				if (totalCount == 0) {
+					$("#message").html("Your cart is empty")
+					$("#checkout-option").hide()
+				} else {
+					$("#message").html(totalCount + " items in your cart")
+					
+					
+					$("#checkout-option").show()
+					var totalPrice = 0
+					products.forEach((product,index) => {
+						if (product.count > 0) {
+							var htmlString = "<div class='row'>"
+							htmlString += "<div class='product-name'>"
+							htmlString += "<div class='name'>" + product.name + "</div>"
+							htmlString += "<div class='count'>" + "Count: " + product.count + "</div>"
+							htmlString += "</div>"
+							htmlString += "<div class='price'>" + "$" + (product.count * product.price).toFixed(2) + "</div>"
+							htmlString += "</div>"
+							$("#cart-products").append(htmlString)
+							totalPrice += (product.count * product.price)
+						}
+						$("#total-price").html("$" + totalPrice.toFixed(2))
+						
+					});
+					
+				}
+				
+			}
+			
+			$("#empty-cart").click(function() {
+				
+				products.forEach((product,index) => {
+					product.count = 0
+				});
+				
+				updateMenu()
+			});
+		
+//			$("#cart-products").append("<div class='row'>")
+//								$("#cart-products").append("<div class='product-name'> \
+//														  	<div class='name'> ${product.name} </div> \
+//														  	<div class='count'>Count: ${product.count} </div>
+//														  )
+//									$("#cart-products").append()
+//									$("#cart-products").append("")
+//								$("#cart-products").append("</div")
+//								$("#cart-products").append("<div class='price'>" + (product.count * product.price) + "</div>")
+//							$("#cart-products").append("</div")
 		
 	</script>
 	</div>
@@ -186,6 +493,7 @@
 		</div>
 	
 		
+
 	</div>
 
 	
