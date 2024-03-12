@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What We Do</title>
+<link rel="stylesheet" href="styles.css"> <!-- main styles.css -->
+<link rel="stylesheet" href="navstyle.css"> <!-- navbar styles.css -->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .header {
+        text-align: center;
+        background-color: #ffda75;
+        padding: 20px;
+    }
+    .columns {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+    .column {
+        flex: 1;
+        padding: 20px;
+        background-color: #f8b173;
+        text-align: center;
+        margin: 10px;
+    }
+    .column img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+<div class="nav">
+    <div class="logo">
+        <img src="logo.png" alt="Hive Haven" width="150">
+    </div>
+    <ul class="links">
+        <li><a href=index.html>Home</a></li>
+        <li><a href=whatwedo.html>What We Do</a></li>
+        <li><a href=adoptAHive.html>Adopt A Hive</a></li>
+        <li><a href=honeyshop.html>Honey Shop</a></li>
+        <li><a href=support.html>How to Support</a></li>
+        <li><a href=aboutUs.html>Meet the Team</a></li>
+        <li><a href=contact.html>Contact Us</a></li>
+    </ul>
+  </div>
+  
+  <div class="hamburger-nav">
+    <a href="#" id="ham-title"> Hive Haven</a>
+    <div id="links">
+        <a href=index.html>Home</a>
+        <a href=whatwedo.html>What We Do</a>
+        <a href=adoptAHive.html>Adopt A Hive</a>
+        <a href=honeyshop.html>Honey Shop</a>
+        <a href=support.html>How to Support</a>
+        <a href=aboutUs.html>Meet the Team</a>
+        <a href=contact.html>Contact Us</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="hamburger()"> 
+        <i class="fa fa-bars"></i>
+    </a>
+  </div>
+    <div class="container">
+        <div class="header">
+            <h1>What We Do</h1>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <h2>Donate to Bee Sanctuaries</h2>
+                <p>When you purchase any honey from us, 100% of your proceeds go to the bees and saving the bees. This could be 
+                    saving hives from areas they cannot live in, towards research on how to save our wonderful pollinators, and more!
+                    This money genuinely makes a difference to our communities, and we thank you for your contributions.
+                </p>
+                <img src="honeypic.jpg" alt="Bee Sanctuary Image">
+            </div>
+            <div class="column">
+                <h2>Sustainable Bee Care</h2>
+                <p> Our work with the bees is done in sustainable practices that are both good for the bees we care for, along with the 
+                    environment, allowing for more generations of bees to flourish. With this, we attempt to work on habitat restoration,
+                    so our bees have safe, green, places to live.
+                </p>
+                <img src="beekeeper.jpg" alt="Sustainable Bee Image">
+            </div>
+            <div class="column">
+                <h2>Community Engagement</h2>
+                <p>Our team is dedicated towards making the Earth a safer place for the bees, one hive at a time. We are happy to answer
+                    any questions from people, which can be reached through our <a href="contact.html">contact us</a> page (where you can also sign up for our email-list!), 
+                    and happy to continue educating the greater population on the wonder that is our bees.
+                </p>
+                <img src="beehappy.jpg" alt="Honey Image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
