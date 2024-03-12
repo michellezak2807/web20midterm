@@ -38,6 +38,7 @@
   border-radius: 5px;
   font-size: 16px;
   margin-top: 5px;
+  box-sizing: border-box; /* Added box-sizing */
 }
 
 .form-group input[type="text"]::placeholder,
@@ -51,6 +52,11 @@
   height: 150px;
 }
 
+.checkbox-group label {
+  display: block;
+  margin-top: 10px;
+}
+
 .btn-submit {
   background-color: #be4e1f;
   color: #fff; /* Submit text color */
@@ -59,6 +65,7 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  width: 100%; /* Added width */
 }
 
 .btn-submit:hover {
@@ -68,7 +75,7 @@
 </head>
 <body>
 
-<!-- Navigation Bar if needed -->
+<!-- Navigation Bar -->
 <div class="nav">
         <div class="logo">
             <img src="logo.png" alt="Hive Haven" width="150">
@@ -106,7 +113,7 @@
 <div class="container">
   <h2>Contact Us</h2>
   <div style="margin-bottom: 20px;"></div> <!-- Added space between headings and inputs -->
-  <form id="contact-form" method="post" action="#">
+  <form id="contact-form" method="post" action="#" onsubmit="return validateForm()">
     <div class="form-group">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -119,9 +126,28 @@
       <label for="message">Message:</label>
       <textarea id="message" name="message" placeholder="Your Message" required></textarea>
     </div>
+    <div class="checkbox-group">
+      <label>
+        <input type="checkbox" id="signup" name="signup">
+        Sign up for an email list
+      </label>
+    </div>
     <button type="submit" class="btn-submit">Submit</button>
   </form>
 </div>
+
+<script>
+  function validateForm() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+    if (name == "" || email == "" || message == "") {
+      alert("All fields must be filled out");
+      return false;
+    }
+    return true;
+  }
+</script>
 
 </body>
 </html>
