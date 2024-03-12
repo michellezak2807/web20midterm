@@ -152,3 +152,54 @@
         font-size: 20px;
     }
 }
+
+footer {
+    background-color: #BDC4D5;
+    padding: 15px;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+	
+footer .left {
+    display: inline-block;
+    color: #082561;
+}
+
+
+footer a:hover {
+    color: #FFFFFF;
+}
+
+footer a {
+    color: #082561 !important;
+}
+
+footer .hivehaven {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+footer .links {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+}
+
+footer .links li {
+    align-items: center;
+    list-style: none;
+    float: right;
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 40px;
+}
+
+footer .links li:not(:first-child) {
+    border-left: 1.5px solid #082561;
+}
