@@ -155,7 +155,9 @@
 
 footer {
     background-color: #EEEEEE;
-    padding: 15px;
+/*    padding: 15px;*/
+	padding-top: 10px;
+	padding-bottom: 10px;
     position: absolute;
     width: 100%;
     display: flex;
@@ -166,6 +168,7 @@ footer {
 footer .left {
     display: inline-block;
     color: #082561;
+	padding-left: 10px;
 }
 
 
@@ -202,4 +205,32 @@ footer .links li {
 
 footer .links li:not(:first-child) {
     border-left: 1.5px solid #082561;
+}
+
+@media only screen and (max-width: 900px) {
+	
+	footer {
+		padding: 0;
+/*		padding-left: 10px;*/
+		padding-top: 10px;
+		padding-bottom: 10px;
+		
+	}
+	
+	footer .hivehaven {
+    	font-size: 15px !important;
+	}
+	
+	footer .left {
+    	font-size: 10px;
+		
+	}
+		
+	footer .links {
+    	display: none;
+		padding: 0 !important;
+		margin: 0 !important;
+		float: left;
+	}
+	
 }
