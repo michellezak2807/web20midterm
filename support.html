@@ -88,19 +88,30 @@
             text-decoration: underline;
         }
 
+    
+    @media (max-width: 1000px) {
+        .pre-info p {
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+        .pre-info h1 {
+            font-size: 40px;
+        }
+        .pre-info p {
+            font-size: 18px;
+        }
+    }
 
     @media only screen and (max-width: 800px) {
         .pre-info p {
             margin-left: 25px;
             margin-right: 25px;
         }
-    }
 
-    @media screen and (max-width: 768px) {
-            section#content ol {
-                grid-template-columns: 1fr; /* Change to single column */
-            }
-        }
+        section#content ol {
+                grid-template-columns: 1fr; 
+         }
+    }
     </style>
 </head>
 
@@ -121,7 +132,7 @@
     </div>
 
     <div class="hamburger-nav">
-        <a href="#" id="ham-title"> Hive Haven</a>
+        <a href="index.html" id="ham-title"> Hive Haven</a>
         <div id="links">
             <a href=index.html>Home</a>
             <a href=whatwedo.html>What We Do</a>
@@ -180,4 +191,5 @@
 	</footer>
 </body>
 </html>
+
 
